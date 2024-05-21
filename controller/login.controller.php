@@ -16,7 +16,7 @@ $password = $_POST['password'];
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $_SESSION['name'] = $username;
+                $_SESSION['name'] = $email;
                 header("location: dashboard.php");
             }
         } else {

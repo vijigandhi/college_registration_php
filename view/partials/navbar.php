@@ -11,6 +11,7 @@
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     /* height: 100vh; */
@@ -20,6 +21,7 @@
 .container {
   
     width: 100%;
+    height: 30px;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
    
@@ -75,12 +77,30 @@ a{
     text-decoration: none;
     color: white;
 }
+    img {
+        width: 25px;
+    }
+    span {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
     </style>
 </head>
 <body>
 <div class="header">
             <div class="logo">HOGWARTS UNIVERSITY</div>
-            <div class="login"><a href="login.php">LOGIN</a></div>
+            <!-- <div class="login"><a href="login.php">LOGIN</a></div> -->
+            <?php 
+            
+            session_start();
+
+            if(isset($_SESSION['name'])){
+                echo "<span><a href='logout.php' class='login'>Logout</a><img src='view/src/avatar-default-icon.png'></span>";
+            } else {
+                echo "<a href='login.php' class='login' id='signup-toggle'>Login</a>";
+            }
+            ?>
         </div>
 </body>
 </html>

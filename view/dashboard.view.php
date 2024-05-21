@@ -1,3 +1,14 @@
+<?php 
+
+session_start();
+
+if (!isset($_SESSION['name'])) {
+    header("Location: login");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,40 +17,24 @@
     <title>Hogwarts University - Home</title>
     <style>
         body {
+            width: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f8d7da;
         }
-
-        .navbar {
-            background-color: #333;
-            overflow: hidden;
-            display: flex;
-            justify-content: space-between;
-            color: white;
+        header{
+            width: 100%;
         }
-
-        .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
+    
         .container1 {
-            max-width: 1200px;
+            width: 90%;
+            max-width: 1400px;
             margin: 20px auto;
             background-color: #ffffff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
         }
 
         .welcome-message {
@@ -51,6 +46,7 @@
         .sections {
             display: flex;
             justify-content: space-between;
+            gap: 1%;
         }
 
         .section {
@@ -74,17 +70,10 @@
 </head>
 <body>
     <header>
-        <?php require "view/partials/navbar.php"; ?>
-    </header>
-    <!-- <div class="navbar">
-        <div class="clgName"><p>Hogwarts University</p></div>
-        <div class="menus">
-        <a href="#">Home</a>
-        <a href="#">Profile</a>
-        <a href="#">Courses</a>
-        <a href="logout.php">Logout</a></div>
-    </div> -->
+        <?php require "view/partials/navbar.php"; 
 
+        ?>
+    </header>
     <div class="container1">
         <div class="welcome-message">
             Welcome to Hogwarts University!
