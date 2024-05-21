@@ -78,7 +78,7 @@ a{
     color: white;
 }
     img {
-        width: 25px;
+        width: 20px;
     }
     span {
     display: flex;
@@ -96,7 +96,7 @@ a{
             session_start();
 
             if(isset($_SESSION['name'])){
-                echo "<span><a href='logout.php' class='login'>Logout</a><img src='view/src/avatar-default-icon.png'></span>";
+                echo "<span><a href='logout.php' class='login'>Logout</a><img src='view/src/avathar.png'></span>";
             } else {
                 echo "<a href='login.php' class='login' id='signup-toggle'>Login</a>";
             }
