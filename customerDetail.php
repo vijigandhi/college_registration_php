@@ -1,22 +1,11 @@
-<?php 
-
-session_start();
-
-if (!isset($_SESSION['name'])) {
-    header("Location: login");
-    exit();
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hogwarts University - Home</title>
+    <title>Document</title>
     <style>
-        body {
+       body {
             width: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
@@ -66,15 +55,20 @@ if (!isset($_SESSION['name'])) {
         .section:hover {
             background-color: #e6891e;
         }
+
     </style>
 </head>
 <body>
     <header>
-        <?php require "view/partials/navbar.php";  ?>
-              
-        </header>
-    
-    
+    <?php require "view/partials/navbar.php";  ?>
+<?php if(isset($_GET['customerDetails']) && $_GET['customerDetails']=='true'): ?>
+<script>
+    document.getElementById('customerList').style.display='block';
+</script>
+<?Php endif; ?>
+
+    </header>
+
     <div class="container1">
         <div class="welcome-message">
             Welcome to Hogwarts University!
@@ -99,3 +93,4 @@ if (!isset($_SESSION['name'])) {
     </div>
 </body>
 </html>
+

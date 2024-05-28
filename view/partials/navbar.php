@@ -85,22 +85,30 @@ a{
     align-items: center;
     gap: 12px;
 }
+
+#customerList{
+    display: none;
+} 
     </style>
 </head>
 <body>
 <div class="header">
-            <div class="logo">HOGWARTS UNIVERSITY</div>
-            <!-- <div class="login"><a href="login.php">LOGIN</a></div> -->
+            <div class="logo"><a href="">HOGWARTS UNIVERSITY</a></div>
+            <div class='login'><a href='admin.php' id='customerList'>Customer Listing</a></div>
             <?php 
             
             session_start();
 
-            if(isset($_SESSION['name'])){
-                echo "<span><a href='logout.php' class='login'>Logout</a><img src='view/src/avathar.png'></span>";
+
+         if(isset($_SESSION['name'])){
+                echo "<span><a href='logout.php' class='login' id='logout'>Logout</a><img src='view/src/avathar.png'></span>";
             } else {
                 echo "<a href='login.php' class='login' id='signup-toggle'>Login</a>";
             }
             ?>
-        </div>
+        
+</div>
+
 </body>
 </html>
+

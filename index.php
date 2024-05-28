@@ -31,4 +31,12 @@ switch ($request){
     case '/index.php':
         require 'home.php';
         break;
+
+    case '/admin':
+        require 'admin.php';
+        break;
+
+    case '/customerDetail':
+        require 'customerDetail.php';
+        break;
 }
